@@ -16,6 +16,11 @@ public class Triangle implements Figures {
         position.add(_x);
         position.add(_y);
     }
+
+    public double getTaille() {
+        return taille;
+    }
+
     public String getVariable() {
         return variable;
     }

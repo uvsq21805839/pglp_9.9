@@ -16,6 +16,7 @@ public class Cercle implements Figures {
         position.add(_x);
         position.add(_y);
     }
+    public double getRayon() {return rayon;}
     public String getVariable() {
         return variable;
     }

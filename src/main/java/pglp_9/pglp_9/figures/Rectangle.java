@@ -18,6 +18,15 @@ public class Rectangle implements Figures {
         position.add(_x);
         position.add(_y);
     }
+
+    public int getLargeur() {
+        return largeur;
+    }
+
+    public int getLongueur() {
+        return longueur;
+    }
+
     public String getVariable() {
         return variable;
     }

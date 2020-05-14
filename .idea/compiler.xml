@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="pglp_9.9" target="1.5" />
+      <module name="pglp_9.9" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

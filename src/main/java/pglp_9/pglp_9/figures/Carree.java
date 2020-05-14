@@ -2,20 +2,26 @@ package pglp_9.pglp_9.figures;
 
 import pglp_9.pglp_9.figures.interfaces.Figures;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Carree implements Figures {
+public class Carree implements Figures, Serializable {
     private String variable;
     private List<Integer> position;
     private int cote;
     public Carree(String _var,int _ct, int _x, int _y){
         this.variable = _var;
         this.cote = _ct;
-        position = new ArrayList<Integer>(2);
+       this.position = new ArrayList<Integer>(2);
         position.add(_x);
         position.add(_y);
     }
+
+    public int getCote() {
+        return cote;
+    }
+
     public String getVariable() {
         return variable;
     }

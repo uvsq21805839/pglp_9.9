@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="FiguresDb">
+  <database-model serializer="dbm" dbms="DERBY" family-id="DERBY" format-version="4.18">
+    <root id="1">
+      <ServerVersion>10.14.1.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="APP">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="NULLID"/>
+    <schema id="4" parent="1" name="SQLJ"/>
+    <schema id="5" parent="1" name="SYS"/>
+    <schema id="6" parent="1" name="SYSCAT"/>
+    <schema id="7" parent="1" name="SYSCS_DIAG"/>
+    <schema id="8" parent="1" name="SYSCS_UTIL"/>
+    <schema id="9" parent="1" name="SYSFUN"/>
+    <schema id="10" parent="1" name="SYSIBM"/>
+    <schema id="11" parent="1" name="SYSPROC"/>
+    <schema id="12" parent="1" name="SYSSTAT"/>
+    <table id="13" parent="2" name="CARREE"/>
+    <table id="14" parent="2" name="CERCLE"/>
+    <table id="15" parent="2" name="FIGURECOMPOSITE"/>
+    <table id="16" parent="2" name="FIGURES"/>
+    <table id="17" parent="2" name="GROUPE"/>
+    <table id="18" parent="2" name="RECTANGLE"/>
+    <table id="19" parent="2" name="TRIANGLE"/>
+    <column id="20" parent="13" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="13" name="POSITION_X">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="22" parent="13" name="POSITION_Y">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="23" parent="13" name="COTE">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="24" parent="13" name="SQL200514070612740">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="25" parent="13" name="SQL200514070612741">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <key id="26" parent="13" name="SQL200514070612740">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="27" parent="13" name="SQL200514070612741">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>FIGURES</RefTableName>
+      <RefKeyName>SQL200514061731230</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+    <column id="28" parent="14" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="14" name="POSITION_X">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="30" parent="14" name="POSITION_Y">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="31" parent="14" name="RAYON">
+      <Position>4</Position>
+      <DataType>DOUBLE|8s</DataType>
+    </column>
+    <index id="32" parent="14" name="SQL200514070612580">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="33" parent="14" name="SQL200514070612581">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <key id="34" parent="14" name="SQL200514070612580">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="14" name="SQL200514070612581">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>FIGURES</RefTableName>
+      <RefKeyName>SQL200514061731230</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+    <column id="36" parent="15" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="15" name="SQL200514070614660">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="38" parent="15" name="SQL200514070614661">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <index id="39" parent="15" name="SQL200514070614662">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <key id="40" parent="15" name="SQL200514070614660">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="15" name="SQL200514070614661">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>GROUPE</RefTableName>
+      <RefKeyName>SQL200514061732040</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+    <foreign-key id="42" parent="15" name="SQL200514070614662">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>FIGURES</RefTableName>
+      <RefKeyName>SQL200514061731230</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+    <column id="43" parent="16" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="16" name="SQL200514070612420">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="16" name="SQL200514070612420">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="17" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="47" parent="17" name="SQL200514070614230">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="48" parent="17" name="SQL200514070614231">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <key id="49" parent="17" name="SQL200514070614230">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="17" name="SQL200514070614231">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>FIGURES</RefTableName>
+      <RefKeyName>SQL200514061731230</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+    <column id="51" parent="18" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="18" name="POSITION_X">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="53" parent="18" name="POSITION_Y">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="54" parent="18" name="LONGUEUR">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="55" parent="18" name="LARGEUR">
+      <Position>5</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="56" parent="18" name="SQL200514070613330">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="57" parent="18" name="SQL200514070613331">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <key id="58" parent="18" name="SQL200514070613330">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="18" name="SQL200514070613331">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>FIGURES</RefTableName>
+      <RefKeyName>SQL200514061731230</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+    <column id="60" parent="19" name="VARIABLE">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="19" name="POSITION_X">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="62" parent="19" name="POSITION_Y">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="63" parent="19" name="TAILLE">
+      <Position>4</Position>
+      <DataType>DOUBLE|8s</DataType>
+    </column>
+    <index id="64" parent="19" name="SQL200514070613850">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="19" name="SQL200514070613851">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+    </index>
+    <key id="66" parent="19" name="SQL200514070613850">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="67" parent="19" name="SQL200514070613851">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VARIABLE</ColNames>
+      <RefTableName>FIGURES</RefTableName>
+      <RefKeyName>SQL200514061731230</RefKeyName>
+      <RefColNames>VARIABLE</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
