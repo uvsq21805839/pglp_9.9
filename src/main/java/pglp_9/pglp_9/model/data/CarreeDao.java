@@ -74,7 +74,7 @@ public class CarreeDao extends DAO<Carree> {
             prepare.setInt(4, figures.getPosition().get(0));
             result = prepare.executeUpdate();
             assert result == 1;
-            System.out.println("Carree added to db");
+            System.out.println("Carree "+figures.getVariable()+"added to db");
         } catch (SQLException e) {
             return null;
         }
@@ -97,7 +97,7 @@ public class CarreeDao extends DAO<Carree> {
                 prepare.setString(4, figures.getVariable());
                 int result = prepare.executeUpdate();
                 if (result==1)
-                    System.out.println("Carree deplacé");
+                    System.out.println("Carree "+figures.getVariable()+" deplacé");
             } catch (SQLException e) {
                 e.printStackTrace();
                 return toEdit;
@@ -111,6 +111,7 @@ public class CarreeDao extends DAO<Carree> {
     @Override
     public void delete(Carree figures) {
         try {
+            FigureCompositeDao.deleteFromGroupe(connect,figures.getVariable());
             PreparedStatement prepare = connect.prepareStatement(
                     "DELETE FROM Carree WHERE VARIABLE = ?");
             prepare.setString(1, figures.getVariable());
@@ -120,7 +121,7 @@ public class CarreeDao extends DAO<Carree> {
             prepare.setString(1, figures.getVariable());
             result = prepare.executeUpdate();
             if (result== 1)
-            System.out.println("Carree supprimé");
+            System.out.println("Carree "+figures.getVariable()+" supprimé");
         } catch (SQLException e) {
             e.printStackTrace();
         }

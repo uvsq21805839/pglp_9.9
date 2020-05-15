@@ -71,10 +71,10 @@ public class CercleDao extends DAO<Cercle> {
             prepare.setString(1, figures.getVariable());
             prepare.setDouble(2, figures.getRayon());
             prepare.setInt(3, figures.getPosition().get(0));
-            prepare.setInt(4, figures.getPosition().get(0));
+            prepare.setInt(4, figures.getPosition().get(1));
             result = prepare.executeUpdate();
             assert result == 1;
-            System.out.println("Cercle added to db");
+            System.out.println("Cercle "+figures.getVariable()+" added to db");
         } catch (SQLException e) {
             return null;
         }
@@ -97,7 +97,7 @@ public class CercleDao extends DAO<Cercle> {
                 prepare.setString(4, figures.getVariable());
                 int result = prepare.executeUpdate();
                 if (result==1)
-                    System.out.println("Cercle deplacé");
+                    System.out.println("Cercle "+figures.getVariable()+" deplacé");
             } catch (SQLException e) {
                 e.printStackTrace();
                 return toEdit;
@@ -111,6 +111,7 @@ public class CercleDao extends DAO<Cercle> {
     @Override
     public void delete(Cercle figures) {
         try {
+            FigureCompositeDao.deleteFromGroupe(connect,figures.getVariable());
             PreparedStatement prepare = connect.prepareStatement(
                     "DELETE FROM Cercle WHERE VARIABLE = ?");
             prepare.setString(1, figures.getVariable());
@@ -120,7 +121,7 @@ public class CercleDao extends DAO<Cercle> {
             prepare.setString(1, figures.getVariable());
             result = prepare.executeUpdate();
             if (result== 1)
-            System.out.println("Cercle supprimé");
+            System.out.println("Cercle "+figures.getVariable()+" supprimé");
         } catch (SQLException e) {
             e.printStackTrace();
         }

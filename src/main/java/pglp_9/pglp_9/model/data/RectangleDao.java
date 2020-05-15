@@ -76,7 +76,7 @@ public class RectangleDao extends DAO<Rectangle> {
             prepare.setInt(5, figures.getPosition().get(0));
             int result = prepare.executeUpdate();
             assert result == 1;
-            System.out.println("Rectangle added to db");
+            System.out.println("Rectangle "+figures.getVariable()+" added to db");
         } catch (SQLException e) {
             return null;
         }
@@ -101,7 +101,7 @@ public class RectangleDao extends DAO<Rectangle> {
                 prepare.setString(5, figures.getVariable());
                 int result = prepare.executeUpdate();
                 if (result==1)
-                    System.out.println("Rectangle deplacé");
+                    System.out.println("Rectangle "+figures.getVariable()+" deplacé");
             } catch (SQLException e) {
                 e.printStackTrace();
                 return toEdit;
@@ -115,6 +115,7 @@ public class RectangleDao extends DAO<Rectangle> {
     @Override
     public void delete(Rectangle figures) {
         try {
+            FigureCompositeDao.deleteFromGroupe(connect,figures.getVariable());
             PreparedStatement prepare = connect.prepareStatement(
                     "DELETE FROM Rectangle WHERE VARIABLE = ?");
             prepare.setString(1, figures.getVariable());
@@ -124,7 +125,7 @@ public class RectangleDao extends DAO<Rectangle> {
             prepare.setString(1, figures.getVariable());
             int result = prepare.executeUpdate();
             if (result== 1)
-            System.out.println("Rectangle supprimé");
+            System.out.println("Rectangle "+figures.getVariable()+" supprimé");
         } catch (SQLException e) {
             e.printStackTrace();
         }

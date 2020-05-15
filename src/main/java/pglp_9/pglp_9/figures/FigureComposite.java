@@ -14,6 +14,14 @@ public class FigureComposite implements Figures, Iterable<Figures>  {
         this.variable = _var;
     }
 
+    public String getVariable() {
+        return variable;
+    }
+
+    public List<Figures> getChilds() {
+        return childs;
+    }
+
     public void add(Figures _childs){
         childs.add(_childs);
     }

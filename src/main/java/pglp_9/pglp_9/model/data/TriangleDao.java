@@ -71,10 +71,10 @@ public class TriangleDao extends DAO<Triangle> {
             prepare.setString(1, figures.getVariable());
             prepare.setDouble(2, figures.getTaille());
             prepare.setInt(3, figures.getPosition().get(0));
-            prepare.setInt(4, figures.getPosition().get(0));
+            prepare.setInt(4, figures.getPosition().get(1));
             result = prepare.executeUpdate();
             assert result == 1;
-            System.out.println("Triangle added to db");
+            System.out.println("Triangle "+figures.getVariable()+" added to db");
         } catch (SQLException e) {
             return null;
         }
@@ -97,7 +97,7 @@ public class TriangleDao extends DAO<Triangle> {
                 prepare.setString(4, figures.getVariable());
                 int result = prepare.executeUpdate();
                 if (result==1)
-                    System.out.println("Triangle deplacé");
+                    System.out.println("Triangle "+figures.getVariable()+" deplacé");
             } catch (SQLException e) {
                 e.printStackTrace();
                 return toEdit;
@@ -111,6 +111,7 @@ public class TriangleDao extends DAO<Triangle> {
     @Override
     public void delete(Triangle figures) {
         try {
+            FigureCompositeDao.deleteFromGroupe(connect,figures.getVariable());
             PreparedStatement prepare = connect.prepareStatement(
                     "DELETE FROM Triangle WHERE VARIABLE = ?");
             prepare.setString(1, figures.getVariable());
@@ -120,7 +121,7 @@ public class TriangleDao extends DAO<Triangle> {
             prepare.setString(1, figures.getVariable());
             result = prepare.executeUpdate();
             if (result== 1)
-            System.out.println("Triangle supprimé");
+            System.out.println("Triangle "+figures.getVariable()+" supprimé");
         } catch (SQLException e) {
             e.printStackTrace();
         }

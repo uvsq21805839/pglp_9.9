@@ -1,13 +1,7 @@
 package pglp_9.pglp_9.model;
 
-import pglp_9.pglp_9.figures.Carree;
-import pglp_9.pglp_9.figures.Cercle;
-import pglp_9.pglp_9.figures.Rectangle;
-import pglp_9.pglp_9.figures.Triangle;
-import pglp_9.pglp_9.model.data.CarreeDao;
-import pglp_9.pglp_9.model.data.CercleDao;
-import pglp_9.pglp_9.model.data.RectangleDao;
-import pglp_9.pglp_9.model.data.TriangleDao;
+import pglp_9.pglp_9.figures.*;
+import pglp_9.pglp_9.model.data.*;
 
 import java.sql.Connection;
 
@@ -27,5 +21,7 @@ public class FactoryDao {
     public DAO<Triangle> getTriangleDao() {return new TriangleDao(connect);    }
     public DAO<Carree> getCarreeDao() {
         return new CarreeDao(connect);
+    }
+    public DAO<FigureComposite> getFigureCompositeDao(){ return new FigureCompositeDao(connect);
     }
 }

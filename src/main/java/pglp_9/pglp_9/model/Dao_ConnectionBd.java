@@ -76,16 +76,18 @@ public abstract class  Dao_ConnectionBd {
 
         String drop_groupe = "DROP TABLE Groupe";
         String groupe = "CREATE TABLE Groupe (" +
-                "variable varchar(25),"+
-                "PRIMARY KEY (variable),"+
-                "FOREIGN KEY (variable) REFERENCES Figures (variable)"+
+                "id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ,"+
+                "var_group varchar (25),"+
+                "var_fig varchar (25),"+
+                "PRIMARY KEY (id),"+
+                "FOREIGN KEY (var_fig) REFERENCES Figures (variable),"+
+                "FOREIGN KEY (var_group) REFERENCES FigureComposite (variable)"+
                 ")";
 
-        String drop_figureComposite = "DROP TABLE figureComposite";
-        String figureComposite = "CREATE TABLE figureComposite ("+
+        String drop_figureComposite = "DROP TABLE FigureComposite";
+        String figureComposite = "CREATE TABLE FigureComposite ("+
                 "variable varchar(25),"+
                 "PRIMARY KEY (variable),"+
-                "FOREIGN KEY (variable) REFERENCES Groupe (variable),"+
                 "FOREIGN KEY (variable) REFERENCES Figures (variable)"+
                 ")";
 
@@ -109,14 +111,14 @@ public abstract class  Dao_ConnectionBd {
                 resultSet = databaseMetadata.getTables(null,"APP","TRIANGLE",null);
                 if (resultSet.next())
                     s.execute(drop_triangle);
-                //groupeComposite
-                resultSet = databaseMetadata.getTables(null,"APP","FIGURECOMPOSITE",null);
-                if (resultSet.next())
-                    s.execute(drop_figureComposite);
                 //groupe
                 resultSet = databaseMetadata.getTables(null,"APP","GROUPE",null);
                 if (resultSet.next())
                     s.execute(drop_groupe);
+                //groupeComposite
+                resultSet = databaseMetadata.getTables(null,"APP","FIGURECOMPOSITE",null);
+                if (resultSet.next())
+                    s.execute(drop_figureComposite);
                 s.execute(drop_figure);
             }
             s.execute(figure);
@@ -124,8 +126,9 @@ public abstract class  Dao_ConnectionBd {
             s.execute(carree);
             s.execute(rectangle);
             s.execute(triangle);
-            s.execute(groupe);
             s.execute(figureComposite);
+            s.execute(groupe);
+
         }else {
             if (!resultSet.next())
                 s.execute(figure);
@@ -144,14 +147,14 @@ public abstract class  Dao_ConnectionBd {
             resultSet = databaseMetadata.getTables(null,"APP","RECTANGLE",null);
             if (!resultSet.next())
                 s.execute(rectangle);
-            //groupe
-            resultSet = databaseMetadata.getTables(null,"APP","GROUPE",null);
-            if (!resultSet.next())
-                s.execute(groupe);
             //figureComposite
             resultSet = databaseMetadata.getTables(null,"APP","FIGURECOMPOSITE",null);
             if (!resultSet.next())
                 s.execute(figureComposite);
+            //groupe
+            resultSet = databaseMetadata.getTables(null,"APP","GROUPE",null);
+            if (!resultSet.next())
+                s.execute(groupe);
         }
     }
 }
