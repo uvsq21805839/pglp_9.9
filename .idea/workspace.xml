@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6744b8b6-abf1-4c39-90a2-30d7e79dba03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/AfficherCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/AfficherToutCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/DeleteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/HelpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/NotFoundCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/TypeToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/DrawingTUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/DrawingTUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/Command/MoveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/DrawingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/DrawingApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/figures/Carree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/figures/Carree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/figures/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/figures/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/Dao_ConnectionBd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/Dao_ConnectionBd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/data/CarreeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/data/CarreeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/data/FigureCompositeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/data/FigureCompositeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/data/TriangleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pglp_9/pglp_9/model/data/TriangleDao.java" afterDir="false" />
-    </list>
+    <list default="true" id="6744b8b6-abf1-4c39-90a2-30d7e79dba03" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +104,7 @@
       <workItem from="1589665388228" duration="55210000" />
       <workItem from="1589743566720" duration="5392000" />
       <workItem from="1589749244727" duration="256000" />
-      <workItem from="1589749656081" duration="5830000" />
+      <workItem from="1589749656081" duration="6290000" />
     </task>
     <servers />
   </component>
@@ -167,22 +148,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589696262189" />
-    <state width="1323" height="231" key="GridCell.Tab.0.bottom" timestamp="1589755132222">
+    <state width="1323" height="231" key="GridCell.Tab.0.bottom" timestamp="1589755528104">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="231" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589755132222" />
-    <state width="1323" height="231" key="GridCell.Tab.0.center" timestamp="1589755132221">
+    <state width="1323" height="231" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589755528104" />
+    <state width="1323" height="231" key="GridCell.Tab.0.center" timestamp="1589755528104">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="231" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589755132221" />
-    <state width="1323" height="231" key="GridCell.Tab.0.left" timestamp="1589755132221">
+    <state width="1323" height="231" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589755528104" />
+    <state width="1323" height="231" key="GridCell.Tab.0.left" timestamp="1589755528104">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="231" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589755132221" />
-    <state width="1323" height="231" key="GridCell.Tab.0.right" timestamp="1589755132221">
+    <state width="1323" height="231" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589755528104" />
+    <state width="1323" height="231" key="GridCell.Tab.0.right" timestamp="1589755528104">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="231" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589755132221" />
+    <state width="1323" height="231" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589755528104" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1589745976062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
