@@ -9,8 +9,8 @@ import java.util.List;
 public class Carree implements Figures, Serializable {
     private String variable;
     private List<Integer> position;
-    private int cote;
-    public Carree(String _var,int _ct, int _x, int _y){
+    private double cote;
+    public Carree(String _var,double _ct, int _x, int _y){
         this.variable = _var;
         this.cote = _ct;
        this.position = new ArrayList<Integer>(2);
@@ -18,7 +18,7 @@ public class Carree implements Figures, Serializable {
         position.add(_y);
     }
 
-    public int getCote() {
+    public double getCote() {
         return cote;
     }
 

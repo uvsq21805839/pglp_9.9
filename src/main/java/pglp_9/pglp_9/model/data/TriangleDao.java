@@ -26,7 +26,7 @@ public class TriangleDao extends DAO<Triangle> {
                 try {
                     triangle =  new Triangle(
                             result.getString("variable"),
-                            result.getDouble("rayon"),
+                            result.getDouble("taille"),
                             result.getInt("position_x"),
                             result.getInt("position_y")
                     );

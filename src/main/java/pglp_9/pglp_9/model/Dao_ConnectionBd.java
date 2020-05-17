@@ -2,6 +2,7 @@ package pglp_9.pglp_9.model;
 
 import java.sql.*;
 
+
 public abstract class  Dao_ConnectionBd {
     /**
      * Création de la base de données
@@ -11,7 +12,7 @@ public abstract class  Dao_ConnectionBd {
     public static Connection newConnectionDB() throws SQLException {
         try {
             return DriverManager.getConnection(
-                    "jdbc:derby:FiguresDb;create=true;update=true");
+                    "jdbc:derby:FiguresDb;create=true;");
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

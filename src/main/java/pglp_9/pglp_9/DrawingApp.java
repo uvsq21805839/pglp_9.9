@@ -1,64 +1,54 @@
 package pglp_9.pglp_9;
 
-import pglp_9.pglp_9.figures.Cercle;
-import pglp_9.pglp_9.figures.Rectangle;
-import pglp_9.pglp_9.figures.FigureComposite;
+import pglp_9.pglp_9.Command.Command;
+import pglp_9.pglp_9.Command.DrawingTUI;
+import pglp_9.pglp_9.Command.ExitCommand;
 import pglp_9.pglp_9.model.Dao_ConnectionBd;
-import pglp_9.pglp_9.model.FactoryDao;
-import pglp_9.pglp_9.model.data.FigureCompositeDao;
-import pglp_9.pglp_9.model.data.RectangleDao;
 
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLClientInfoException;
+import java.util.Scanner;
 
 
 public class DrawingApp
 {
-    public static void main( String[] args ) throws SQLException {
+    public static void main( String[] args ) throws Exception {
+        DrawingApp drawingApp = new DrawingApp();
+        drawingApp.run();
+    }
+    public void run() throws Exception {
         Connection connect = Dao_ConnectionBd.newConnectionDB();
-        if (connect!= null)
-        Dao_ConnectionBd.createTables(connect,true);
-        Rectangle r1 = new Rectangle("r1",10,5,0, 2);
-        Rectangle r2 = new Rectangle("r2",15,1,1, 3);
+        if (connect == null){
+            throw new SQLClientInfoException();
+        }
+        Dao_ConnectionBd.createTables(connect,false);
+        DrawingTUI drawingTUI = new DrawingTUI(connect);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(
+                "PGLP9.9 :\n"+
+                        "Commandes : \n \t-\tAfficher(var) pour afficher une figure.\n" +
+                        "\t-\tvar = Cercle((x,y),rayon) pour creer un cercle.\n" +
+                        "\t-\tvar = Carree((x,y),cote) pour creer un carree.\n"+
+                        "\t-\tvar = Triangle((x,y),taille) pour creer un triangle.\n"+
+                        "\t-\tvar = Rectangle((x,y),longueur,largeur) pour creer un rectangle.\n"+
+                        "\t-\tvar = Grouper(var1,var2,...,varN) pour grouper plusieurs figures.\n"+
+                        "\t-\tMove(var,(x,y)) pour deplacer une figure.\n"+
+                        "\t-\tSupprimer(var) pour supprimer une figure.\n"+
+                        "\t-\tAfficherTout() pour afficher toutes les figures.\n"+
+                        "\t-\tHelp ou ? pour afficher aide.\n"+
+                        "\t-\tExit ou Quit pour Quitter.\n"
+        );
 
-        Cercle c1 = new Cercle("c1",15,1,1);
-        Cercle c2 = new Cercle("c2",5,1,2);
+        String input = scanner.nextLine();
+        Command command = drawingTUI.nextCommand(input);
+        command.execute();
+        while (!command.getClass().equals(ExitCommand.class)){
+            System.out.println();
+            input = scanner.nextLine();
+            command = drawingTUI.nextCommand(input);
+            command.execute();
+        }
 
-        FactoryDao factoryDao = new FactoryDao(connect);
-
-        RectangleDao RectangleDao = (RectangleDao) factoryDao.getRectangleDao();
-        FigureCompositeDao fig = (FigureCompositeDao) factoryDao.getFigureCompositeDao();
-
-        FigureComposite groupe1 = new FigureComposite("g1");
-        groupe1.add(r1);
-        groupe1.add(c1);
-        groupe1.add(c2);
-        RectangleDao.create(r1);
-        RectangleDao.create(r2);
-
-        List<Integer> newposition = new ArrayList<Integer>(2);
-        newposition.add(15);
-        newposition.add(30);
-        r1.move(newposition);
-        RectangleDao.update(r1);
-       fig.create(groupe1);
-       FigureComposite g = fig.find("g1");
-       if (g == null)
-           System.out.println("no found");
-       else g.afficher();
-       newposition = new ArrayList<>(2);
-       newposition.add(100);
-       newposition.add(100);
-       groupe1.move(newposition);
-       fig.update(groupe1);
-       RectangleDao.delete(r1);
-        g = fig.find("g1");
-        if (g == null)
-            System.out.println("no found");
-        else g.afficher();
-      // fig.delete(groupe1);
 
     }
 }

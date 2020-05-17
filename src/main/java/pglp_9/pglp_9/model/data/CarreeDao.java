@@ -26,7 +26,7 @@ public class CarreeDao extends DAO<Carree> {
                 try {
                     carree =  new Carree(
                             result.getString("variable"),
-                            result.getInt("cote"),
+                            result.getDouble("cote"),
                             result.getInt("position_x"),
                             result.getInt("position_y")
                     );
@@ -69,12 +69,12 @@ public class CarreeDao extends DAO<Carree> {
             prepare = connect.prepareStatement(
                     "INSERT INTO Carree (variable,COTE,position_x,position_y) VALUES (?,?,?,?)");
             prepare.setString(1, figures.getVariable());
-            prepare.setInt(2, figures.getCote());
+            prepare.setDouble(2, figures.getCote());
             prepare.setInt(3, figures.getPosition().get(0));
             prepare.setInt(4, figures.getPosition().get(0));
             result = prepare.executeUpdate();
             assert result == 1;
-            System.out.println("Carree "+figures.getVariable()+"added to db");
+            System.out.println("Carree "+figures.getVariable()+" added to db");
         } catch (SQLException e) {
             return null;
         }

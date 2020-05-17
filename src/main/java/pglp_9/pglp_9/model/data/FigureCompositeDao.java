@@ -8,6 +8,7 @@ import pglp_9.pglp_9.model.FactoryDao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class FigureCompositeDao extends DAO<FigureComposite> {
     public FigureCompositeDao(final Connection _connection){
@@ -245,6 +246,38 @@ public class FigureCompositeDao extends DAO<FigureComposite> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Figures figureExist(Connection connection, String variable) {
+        Figures figures =null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "SELECT VARIABLE FROM FIGURES where VARIABLE = ? "
+            );
+            preparedStatement.setString(1,variable);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                FactoryDao factoryDao = new FactoryDao(connection);
+                CercleDao cercleDao = (CercleDao) factoryDao.getCercleDao();
+                CarreeDao carreeDao = (CarreeDao) factoryDao.getCarreeDao();
+                TriangleDao triangleDao = (TriangleDao) factoryDao.getTriangleDao();
+                RectangleDao rectangleDao = (RectangleDao) factoryDao.getRectangleDao();
+                FigureCompositeDao figureCompositeDao = (FigureCompositeDao) factoryDao.getFigureCompositeDao();
+                figures = cercleDao.find(resultSet.getString(1));
+                if (figures == null)
+                    figures = carreeDao.find(resultSet.getString(1));
+                if (figures == null)
+                    figures = triangleDao.find(resultSet.getString(1));
+                if (figures == null)
+                    figures = rectangleDao.find(resultSet.getString(1));
+                if (figures == null)
+                    figures = figureCompositeDao.find(resultSet.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return figures;
     }
 
     public static void deleteFromGroupe(Connection _con, String variable) {

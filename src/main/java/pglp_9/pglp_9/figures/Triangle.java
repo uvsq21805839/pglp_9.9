@@ -33,7 +33,7 @@ public class Triangle implements Figures {
         String stringBuilder = this.variable +
                 " = Triangle" +
                 "(centre=(x: " + position.get(0) + ", y: " + position.get(1) + ")" +
-                ", Taille 3 cotes = " + this.taille +")";
+                ", Taille des trois cotes = " + this.taille +")";
         System.out.println(stringBuilder);
     }
 
