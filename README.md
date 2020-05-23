@@ -60,3 +60,5 @@ Commandes :
 	
 	-	Exit ou Quit pour Quitter.
 	
+	NB: var est le nom du variable.
+	
