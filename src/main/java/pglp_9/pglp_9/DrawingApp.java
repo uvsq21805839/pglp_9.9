@@ -26,6 +26,7 @@ public class DrawingApp
         Scanner scanner = new Scanner(System.in);
         System.out.println(
                 "PGLP9.9 :\n"+
+                "Bienvenue sur logiciel de dessin by DIAWARA\n"+
                         "Commandes : \n \t-\tAfficher(var) pour afficher une figure.\n" +
                         "\t-\tvar = Cercle((x,y),rayon) pour creer un cercle.\n" +
                         "\t-\tvar = Carree((x,y),cote) pour creer un carree.\n"+
