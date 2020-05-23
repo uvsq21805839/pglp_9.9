@@ -34,15 +34,29 @@ La méthode `run` de cette classe interagira avec `DrawingTUI` pour récupérer 
 ----------------------------------------------------------------------------------------------------------------------------------
 Mode utilisation:
 
+
 Commandes : 
+
+
  	-	Afficher(var) pour afficher une figure.
+	
 	-	var = Cercle((x,y),rayon) pour creer un cercle.
+	
 	-	var = Carree((x,y),cote) pour creer un carree.
+	
 	-	var = Triangle((x,y),taille) pour creer un triangle.
+	
 	-	var = Rectangle((x,y),longueur,largeur) pour creer un rectangle.
+	
 	-	var = Grouper(var1,var2,...,varN) pour grouper plusieurs figures.
+	
 	-	Move(var,(x,y)) pour deplacer une figure.
+	
 	-	Supprimer(var) pour supprimer une figure.
+	
 	-	AfficherTout() pour afficher toutes les figures.
+	
 	-	Help ou ? pour afficher aide.
+	
 	-	Exit ou Quit pour Quitter.
+	
